@@ -1,5 +1,5 @@
 {
-  "name": "nextjs",
+  "name": "andres.villarreal.co.cr",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,8 +12,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-markdown": "^5.0.2",
-    "sass": "^1.29.0",
-    "swr": "^0.3.8"
+    "sass": "^1.29.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.6",
