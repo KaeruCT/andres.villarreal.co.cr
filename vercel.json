@@ -1,12 +1,8 @@
 {
-    "redirects": [
+    "rewrites": [
         {
             "source": "/",
             "destination": "/cv"
-        },
-        {
-            "source": "/es",
-            "destination": "/es/cv"
         }
     ],
     "trailingSlash": true
