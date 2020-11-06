@@ -11,15 +11,18 @@ function ContentPage({ page, info, links }: ContentPageProps): JSX.Element {
     return (
         <Fragment>
             <Head>
-                <title>Andr&eacute;s Villarreal | {page.title}</title>
+                <title>Andrés Villarreal | {page.title}</title>
             </Head>
 
             <Navigation
                 links={links}
-                currentSlug={page.slug}
-                title={info.title}
-                content={info.content} />
-                
+                currentSlug={page.slug} />
+
+            <section className="info">
+                <h1>{info.title}</h1>
+                <ReactMarkdown source={info.content} allowDangerousHtml />
+            </section>
+
             <section className={`featured-content ${page.slug}`}>
                 <h2>{page.title}</h2>
                 <ReactMarkdown source={page.content} allowDangerousHtml />

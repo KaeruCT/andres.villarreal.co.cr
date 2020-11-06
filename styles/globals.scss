@@ -21,6 +21,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     background: $black url("../public/bg.png");
     background-attachment: fixed;
+    font-size: 18px;
 }
 p {
     line-height: 1.65em;
@@ -70,10 +71,11 @@ h5 {
     font-size: 0.9em;
 }
 #content {
-    margin: 5% auto;
+    margin: 2em auto;
     line-height: 1.5em;
     color: $greyDark;
     max-width: 600px;
+    min-height: 800px;
 }
 
 .projects, .skills, .clear {
@@ -115,8 +117,10 @@ a.thumbnail {
 }
 
 .info {
+    margin-bottom: 2em;
+    border-left: 6px $greyBright solid;
+    padding-left: 1em;
     font-size: .9em;
-    min-height: 360px;
     p {
         text-align: justify;
     }
@@ -124,41 +128,6 @@ a.thumbnail {
 
 .nav a {
     text-transform: uppercase;
-}
-
-@media all and (max-width: 680px) {
-    #content {
-            padding: 0 20px;
-    }
-    .info {
-            font-size: 1em;
-            float: left;
-            min-height: unset;
-    }
-    .thumbnail {
-            width: 100%;
-    }
-    .thumbnail img {
-            height: auto;
-    }
-    .nav-links {
-            border-bottom:    1px solid;
-            border-top: $greyBright 1px solid;
-    }
-    .nav-links li {
-            display: inline-block;
-            padding: 0 .3em 0 0;
-    }
-    .nav-links li a {
-            font-size: .9em;
-    }
-    section h2 {
-            display: none;
-    }
-    .face {
-            width: auto !important;
-            margin-bottom: 1em !important;
-    }
 }
 
 footer {
@@ -185,16 +154,22 @@ footer {
         margin: 0 auto;
         max-width: 600px;
     }
-} 
+}
+
+.navigation {
+    position: fixed;
+    background: $white;
+    left: 0;
+    top: 0;
+    padding: 40px;
+    width: 140px;
+}
+
 .face {
-    float: left;
-    clear: left;
-    margin-right: 2em;
-    margin-bottom: 2em;
+    margin: .5em 0;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
-    transition: all 0.5s ease;
+    transition: transform .5s ease;
     max-width: 100%;
-    width: 315px;
     border-radius: 5px;
     &:hover {
         transform: rotate(-5deg);
@@ -209,6 +184,10 @@ footer {
         line-height: 2em;
         font-size: 1.4em;
     }
+}
+
+.nav-links {
+    text-transform: uppercase;
 }
 
 a:link, a:visited {
@@ -287,15 +266,6 @@ section {
         clear: both;
     }
 
-    &.fade {
-        opacity: 0;
-    }
-
-    &.fade-in {
-        opacity: 1;
-        transition: opacity ease-in-out 0.5;
-    }
-
     &.cv p {
         margin-top: 0;
         text-align: justify;
@@ -318,4 +288,56 @@ section {
     }
 
     margin-bottom: 1em;
+}
+
+@media all and (max-width: 1024px) {
+    .navigation {
+        position: static;
+        width: 100%;
+        margin-top: 40px;
+        padding: 0;
+        
+        .face {
+            width: auto !important;
+            margin-bottom: 1em !important;
+            height: 200px;
+        }
+        .info {
+            font-size: 1em;
+            margin-right: 3em;
+        }
+    }
+    .nav-links {
+        border-bottom: $greyBright 2px solid;
+        border-top: $greyBright 2px solid;
+    }
+    .nav-links li {
+        display: inline-block;
+        padding: 0 .3em 0 0;
+    }
+}
+
+
+@media all and (max-width: 680px) {
+    .navigation .face {
+        height: unset;
+    }
+    body {
+        font-size: 16px;
+    }
+    #content {
+        padding: 0 20px;
+    }
+    .thumbnail {
+        width: 100%;
+    }
+    .thumbnail img {
+        height: auto;
+    }
+    .nav-links li a {
+        font-size: .9em;
+    }
+    section h2 {
+        display: none;
+    }
 }
