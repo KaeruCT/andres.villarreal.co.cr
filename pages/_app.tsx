@@ -36,7 +36,6 @@ function App({ Component, pageProps }: AppProps) {
                 )}
                 <div id="content">
                     <Component {...pageProps} />
-                    <div className="clear"></div>
                 </div>
             </div>
 
