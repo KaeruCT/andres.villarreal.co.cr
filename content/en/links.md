@@ -1,0 +1,9 @@
+Links
+
+Find me in places around the Internet!
+
+*   [Pejibaye Blog](http://kaeruct.github.io/) <small>- here I blog about my favorite technologies</small>
+*   [GitHub](http://github.com/KaeruCT) <small>- most of my open source software projects are hosted at GitHub</small>
+*   [LinkedIn](https://www.linkedin.com/in/andr%C3%A9s-villarreal-57017081/) <small>- you gotta have one...!</small>
+*   [Bandcamp](https://tryandy.bandcamp.com/) <small>- If you read, you know I make music, so you can listen & purchase it on my Bandcamp.</small>
+*   [Soundcloud](https://soundcloud.com/try_andy/tracks) <small>- Even more music on my SoundCloud!</small>

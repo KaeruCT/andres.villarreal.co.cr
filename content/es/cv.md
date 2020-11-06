@@ -1,0 +1,66 @@
+CV
+
+#### Una pequeña introducción
+
+He programado [desde que tengo 12 años](https://kaeruct.github.io/posts/origins.html). Lo que he aprendido hasta ahora se puede resumir de esta forma: "mientras menos código mejor".
+
+Sin embargo, vivimos en el mundo real, así que he aprendido a tolerar _codebases_ gigantescas y me he acostumbrado a perder horas haciendo _debugging_ sobre código extraño que fue escrito antes de que me graduara de la secundaria.
+
+En my tiempo libre, disfruto haciendo y escuchando música, jugando videojuegos _retro_, y trabajando en mis propios proyectos. Me encantaría mostrarle toda mi música pero la gente no suele pedirlo...
+
+#### Información Personal
+
+<dl class="personal-info">
+
+<dt>Nombre</dt>
+
+<dd>Andrés Villarreal Cordero</dd>
+
+<dt>Nacionalidad</dt>
+
+<dd>Costarricense</dd>
+
+<dt>Dirección</dt>
+
+<dd>Berlín, Alemania</dd>
+
+<dt>Correo Electrónico</dt>
+
+<dd>andres**@**villarreal**.**co**.**cr</dd>
+
+</dl>
+
+#### Idiomas
+
+Español (lengua materna), e Inglés (avanzado).
+
+#### Experiencia Profesional
+
+##### HelloFresh: 2018 - actual
+
+*   Optimizar un _funnel_ de _e-commerce_ con una profunda utilización de _A/B testing_.
+*   Implementar _landing pages_ de alto rendimiento que incrementaron la conversión de usuarios.
+*   Ser mentor de practicantes e ingenieros _junior_.
+
+##### SecureLink: 2014 - 2018
+
+*   Dar mantenimiento a una aplicación de _software_ _enterprise_.
+*   Diseñar e implementar nuevas funcionalidades.
+*   Mejorar la estabilidad de la aplicación creando pruebas automatizadas y haciendo _refactoring_.
+*   Documenté _software_ y procesos existentes para facilitar el intercambio de conocimiento con los compañeros de trabajo y nuevos empleados.
+*   Modernicé el _frontend_ de la aplicación introduciendo tecnologías como NPM en nuestro flujo de trabajo.
+*   Diseñé e implementé un _dashboard_ de uso interno para visualizar la información de uso de los clientes.
+
+##### Growth Acceleration Partners: 2012 - 2014
+
+*   Diseñé, implementé, y le di mantenimiento a aplicaciones web que se montaron sobre el _LAMP stack_.
+
+#### Preparación Académica
+
+##### UCenfotec: 2011 - 2017
+
+Diplomado en Desarrollo de Software
+
+##### Colegio Yurusti: Graduado en el 2010
+
+Bachiller en Educación Media

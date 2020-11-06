@@ -1,65 +1,104 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head"
+import { existsSync, readFileSync } from "fs"
+import { useRouter } from "next/router"
+import useSWR from "swr"
+import ReactMarkdown from "react-markdown"
+import React from "react"
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const apiPath = "/api/blog/article"
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+const { error, debug } = console
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+/**
+* Async handler for AJAX requests
+* @param {sting} url to fetch
+*/
+const fetcher = async (url) => {
+    debug(`Loading blog article at ${url}`)
+    const res = await fetch(url)
+    const data = await res.json()
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+    if (res.status !== 200) {
+        throw new Error(data.message)
+    }
+    return data
 }
+
+const Article = () => {
+    const { query } = useRouter()
+    const { data, error } = useSWR(
+        () => query.slug && `${apiPath}/${query.slug}`,
+        fetcher
+    )
+
+    if (error) return <div>{error.message}</div>
+    if (!data) return <div>Loading...</div>
+
+    return (
+        <article>
+            <Head>
+                <title>Create Next App</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <ReactMarkdown source={data.content} />
+        </article>
+    )
+}
+
+const contentPath = "content/";
+function formatPath() {
+
+}
+
+/**
+* Loads the data to be used as props at build time
+* @param {object} context NextJS Context object
+*/
+const getStaticProps = async ({ params }) => {
+    const articlePath = formatPath(params.slug)
+    debug(`loading ${articlePath}`)
+    const content = readFileSync(articlePath, "utf-8")
+
+    return {
+        props: {
+            content
+        }
+    }
+}
+
+/**
+* Generates the list of article slugs and creates router paths for
+* each article at build time
+* https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
+*/
+const getStaticPaths = async () => {
+    return {
+        paths: getArticlesList().map((article) => {
+            return {
+                params: {
+                    slug: article
+                }
+            }
+        }),
+        fallback: false // Unmatched slugs should 404
+    }
+}
+
+/**
+* Read the articles directory and return a list of slugs that exist
+* @returns {array} list of slugs matching article markdown files
+*/
+const getArticlesList = () => {
+    const articles = readdirSync(contentPath, { withFileTypes: true })
+        .filter((f) => f.isFile()) // Only return files
+        .filter((f) => f.name.indexOf(".md") === f.name.length - 3) // Only return files ending in ".md"
+
+    if (articles.length <= 0) {
+        return error(`No articles in content directory ${contentPath}`)
+    }
+
+    // trim the .md off the end of the filename to get the slug
+    return articles.map((article) => article.name.split(".md")[0])
+}
+
+export { Article as default, getStaticProps, getStaticPaths };
