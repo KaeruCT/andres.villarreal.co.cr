@@ -27,7 +27,6 @@ function Navigation({ currentSlug, links }: Props) {
     return (
         <section className="navigation">
             <h1>Andr&eacute;s Villarreal</h1>
-            {mobile ? "YES" : "NO"}
             <img src="./img/face.jpg" className="face" alt="face" />
 
             <ul className="nav-links">
