@@ -1,0 +1,28 @@
+Habilidades
+
+#### Tengo habilidades para
+
+*   Trabajar, comunicarme, y asistir a mis compañeros de trabajo para desarrollar soluciones de software de alta calidad.
+*   Desarrollar aplicaciones web utilizando las siguientes tecnologías:
+    *   HTML5
+    *   CSS: Sass, Bootstrap, Foundation, CSS in JS
+    *   JavaScript: Typescript, Node, Express, React, Redux, AngularJS, jQuery
+    *   PHP: Symfony, Zend Framework, Laravel, Silex, CakePHP, Doctrine
+    *   Java: Struts, Spring, Hibernate, Spring Boot, Tomcat, JUnit, Freemarker
+    *   Bases de Datos Relacionales: PostgreSQL, MySQL, sqlite
+*   Utilizar varias herramientas de configuración y desarrollo de software:
+    *   Control de Versiones: Git, Subversion
+    *   Automatización y despliegue: NPM, Grunt, Composer, Maven, Ant
+    *   IDEs / Editores: Visual Studio Code, IntelliJ Idea, Atom, Eclipse, Netbeans, Vim
+    *   Integración Continua: Concourse, Gitlab CI, Jenkins
+    *   _DevOps_: Ansible, Docker, Kubernetes
+*   Utilización de sistemas operativos:
+    *   Linux (Ubuntu, Debian, CentOS)
+    *   Microsoft Windows
+    *   OSX, macOS
+
+#### Quiero mejorar mis habilidades en
+
+*   _DevOps_
+*   Software Libre y de Código Abierto
+*   Liderazgo

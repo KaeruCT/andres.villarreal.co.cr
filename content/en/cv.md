@@ -1,0 +1,66 @@
+CV
+
+#### A Short Introduction
+
+I've been programming [since I was 12 years old](https://kaeruct.github.io/posts/origins.html). What I have learned so far can be summarized as "the less code the better".
+
+However, we live in the real world, so I have learned to cope with gigantic codebases and have gotten used to spending hours debugging through strange code written before I even graduated from high school.
+
+In my spare time, I enjoy making and listening to music, playing old video games, and working on my own side‑projects. I'd love to show you all my music but no one ever seems to ask...
+
+#### Personal Information
+
+<dl class="personal-info">
+
+<dt>Name</dt>
+
+<dd>Andrés Villarreal Cordero</dd>
+
+<dt>Nationality</dt>
+
+<dd>Costa Rican</dd>
+
+<dt>Address</dt>
+
+<dd>Berlin, Germany</dd>
+
+<dt>E­mail</dt>
+
+<dd>andres**@**villarreal**.**co**.**cr</dd>
+
+</dl>
+
+#### Languages
+
+Spanish (first language), and English (advanced).
+
+#### Professional Experience
+
+##### HelloFresh: 2018 - current
+
+*   Optimized an e-commerce funnel making heavy use of A/B testing.
+*   Implemented an ultra-performant landing page framework that led to increases in user conversion.
+*   Mentored interns and junior engineers.
+
+##### SecureLink: 2014 - 2018
+
+*   Maintained an enterprise software application.
+*   Designed and implemented new features.
+*   Improved the stability of our existing codebase by creating automated tests and refactoring.
+*   Documented existing software and processes to facilitate knowledge sharing with team mates and new hires.
+*   Modernized the application's frontend by introducing tools like NPM into our workflow.
+*   Designed and developed an internal dashboard to view customer usage information.
+
+##### Growth Acceleration Partners: 2012 - 2014
+
+*   Designed, developed, and maintained web applications that made use of the LAMP stack.
+
+#### Academic Preparation
+
+##### UCenfotec: 2011 - 2017
+
+Software Development Associate's Degree
+
+##### Colegio Yurusti: Graduated on 2010
+
+High School Diploma
