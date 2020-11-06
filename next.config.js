@@ -1,11 +1,12 @@
 module.exports = {
+    poweredByHeader: false,
     i18n: {
         locales: ["en", "es"],
         defaultLocale: "en"
     },
-    async redirects() {
+    async rewrites() {
         return [
-            { source: "/", destination: "/cv", permanent: true }
+            { source: "/", destination: "/cv" }
         ];
     }
 };
