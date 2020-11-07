@@ -1,14 +1,14 @@
-import { MouseEvent, useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ContentLink } from "../lib/content";
 
 interface Props {
     links: ContentLink[];
     currentSlug: string;
+    children: JSX.Element;
 }
 
-function Navigation({ currentSlug, links }: Props) {
+function Navigation({ currentSlug, links, children }: Props) {
     const [mobile, setMobile] = useState(false);
     useEffect(() => {
         function listener(this: MediaQueryList) {
@@ -17,6 +17,7 @@ function Navigation({ currentSlug, links }: Props) {
         const media = window.matchMedia && window.matchMedia("all and (max-width: 680px)");
         if (media) {
             media.addEventListener("change", listener);
+            setMobile(media.matches);
         }
         return () => {
             if (media) {
@@ -40,6 +41,7 @@ function Navigation({ currentSlug, links }: Props) {
                     </li>
                 ))}
             </ul>
+            {children}
         </section>
     );
 }

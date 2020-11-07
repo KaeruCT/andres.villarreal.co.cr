@@ -290,40 +290,81 @@ section {
     margin-bottom: 1em;
 }
 
-@media all and (max-width: 1024px) {
+.desktop-only {
+    display: block;
+}
+.mobile-only {
+    display: none;
+}
+
+@media all and (max-width: 1040px) {
+    .desktop-only {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
     .navigation {
         position: static;
         width: 100%;
         margin-top: 40px;
         padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        h1 {
+            width: 100%;
+        }
         
         .face {
-            width: auto !important;
+            margin: 0 auto;
             margin-bottom: 1em !important;
-            height: 200px;
+            max-width: 250px;
+            width: 50%;
+            order: 0;
         }
+        
         .info {
-            font-size: 1em;
-            margin-right: 3em;
+            width: 50%;
+            font-size: .9em;
+            border-left: 0;
+            margin: 0;
+            order: 1;
         }
-    }
-    .nav-links {
-        border-bottom: $greyBright 2px solid;
-        border-top: $greyBright 2px solid;
-    }
-    .nav-links li {
-        display: inline-block;
-        padding: 0 .3em 0 0;
+
+        .nav-links {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            border-bottom: $greyBright 2px solid;
+            border-top: $greyBright 2px solid;
+            flex-wrap: wrap;
+            order: 2;
+        }
+        .nav-links li {
+            display: inline-block;
+            padding: 0 .3em 0 0;
+        }
     }
 }
 
 
 @media all and (max-width: 680px) {
-    .navigation .face {
-        height: unset;
-    }
     body {
         font-size: 16px;
+    }
+    .navigation {
+        .face {
+            height: unset;
+        }
+        .info {
+            margin: 0 auto;
+        }
+        .nav-links li a {
+            font-size: .9em;
+        }
     }
     #content {
         padding: 0 20px;
@@ -334,10 +375,26 @@ section {
     .thumbnail img {
         height: auto;
     }
-    .nav-links li a {
-        font-size: .9em;
-    }
+    
     section h2 {
         display: none;
     }
+}
+
+@media all and (max-width: 400px) {
+    .navigation {
+        .nav-links {
+            justify-content: center;
+        }
+        .info {
+            width: 100%;
+            padding: 0;
+        }
+        .face {
+            width: 100%;
+            height: unset;
+            max-width: unset;
+        }
+    }
+    
 }
