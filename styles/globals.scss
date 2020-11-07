@@ -166,13 +166,15 @@ footer {
 }
 
 .face {
-    margin: .5em 0;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
-    transition: transform .5s ease;
-    max-width: 100%;
-    border-radius: 5px;
-    &:hover {
-        transform: rotate(-5deg);
+    img {
+        margin: .5em 0;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
+        transition: transform .5s ease;
+        max-width: 100%;
+        border-radius: 5px;
+        &:hover {
+            transform: rotate(-5deg);
+        }
     }
 }
 
@@ -322,7 +324,6 @@ section {
             margin: 0 auto;
             margin-bottom: 1em !important;
             max-width: 250px;
-            width: 50%;
             order: 0;
         }
         
@@ -378,6 +379,14 @@ section {
     
     section h2 {
         display: none;
+    }
+}
+
+@media all and (max-width: 570px) {
+    .navigation {
+        .info {
+            width: 100%;
+        }
     }
 }
 
