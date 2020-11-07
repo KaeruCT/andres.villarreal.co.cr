@@ -8,6 +8,12 @@ import Navigation from "../components/Navigation";
 type ContentPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 function ContentPage({ page, info, links }: ContentPageProps): JSX.Element {
+    const infoContent = (
+        <Fragment>
+            <h1>{info.title}</h1>
+            <ReactMarkdown source={info.content} allowDangerousHtml />
+        </Fragment>
+    );
     return (
         <Fragment>
             <Head>
@@ -16,12 +22,11 @@ function ContentPage({ page, info, links }: ContentPageProps): JSX.Element {
 
             <Navigation
                 links={links}
-                currentSlug={page.slug} />
+                currentSlug={page.slug}>
+                <section className="mobile-only info">{infoContent}</section>
+            </Navigation>
 
-            <section className="info">
-                <h1>{info.title}</h1>
-                <ReactMarkdown source={info.content} allowDangerousHtml />
-            </section>
+            <section className="desktop-only info">{infoContent}</section>
 
             <section className={`featured-content ${page.slug}`}>
                 <h2>{page.title}</h2>
