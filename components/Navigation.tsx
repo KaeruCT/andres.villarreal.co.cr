@@ -27,8 +27,10 @@ function Navigation({ currentSlug, links, children }: Props) {
     }, []);
     return (
         <section className="navigation">
-            <h1>Andr&eacute;s Villarreal</h1>
-            <img src="./img/face.jpg" className="face" alt="face" />
+            <div className="face">
+                <h1>Andr&eacute;s Villarreal</h1>
+                <img src="./img/face.jpg" className="face" alt="face" />
+            </div>
 
             <ul className="nav-links">
                 {links.map((link) => (
