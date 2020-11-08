@@ -32,7 +32,7 @@ function App({ Component, pageProps }: AppProps) {
                 <meta name="description" content={description} />
                 <meta property="og:description" content={description} />
                 <meta name="twitter:card" content="summary" />
-                <meta property="og:image" content="./img/face.jpg" />
+                <meta property="og:image" content="/img/face.jpg" />
                 <meta property="og:image:width" content="640" />
                 <meta property="og:image:height" content="640" />
                 <meta property="og:url" content={url} />
