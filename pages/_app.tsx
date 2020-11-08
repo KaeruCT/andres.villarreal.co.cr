@@ -7,18 +7,33 @@ import Link from "next/link";
 const LOCALES = [
     { name: "English", key: "en" },
     { name: "Español", key: "es" },
-]
+];
+
+// TODO: move this to _content, should not be in code
+const DESC = {
+    "en": "Andrés Villarreal, Software Engineer",
+    "es": "Andrés Villarreal, Ingeniero de Software",
+};
 
 function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
+
+    const description = DESC[router.locale];
+    const url = "https://andres.villarreal.co.cr/" + router.pathname;
 
     return (
         <div>
             <Head>
                 <title>Andrés Villarreal</title>
+                <meta name="og:title" />
                 <meta name="viewport" content="width=device-width, user-scalable=yes" />
-                <meta property="description" content="Andrés Villarreal, Software Engineer" />
-                <meta property="keywords" content="Software Engineer, Frontend Developer, Software Development, Open Source, Web Developer" />
+                <meta name="description" content={description} />
+                <meta property="og:description" content={description} />
+                <meta name="twitter:card" content="summary" />
+                <meta property="og:image" content="./img/face.jpg" />
+                <meta property="og:image:width" content="640" />
+                <meta property="og:image:height" content="640" />
+                <meta property="og:url" content={url} />
                 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
