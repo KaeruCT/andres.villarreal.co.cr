@@ -19,13 +19,15 @@ function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
 
     const description = DESC[router.locale];
-    const url = "https://andres.villarreal.co.cr/" + router.pathname;
+    const title = "Andrés Villarreal";
+    const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
+    const url = "https://andres.villarreal.co.cr" + localePath + router.asPath;
 
     return (
         <div>
             <Head>
-                <title>Andrés Villarreal</title>
-                <meta name="og:title" />
+                <title>{title}</title>
+                <meta name="og:title" content={title} />
                 <meta name="viewport" content="width=device-width, user-scalable=yes" />
                 <meta name="description" content={description} />
                 <meta property="og:description" content={description} />

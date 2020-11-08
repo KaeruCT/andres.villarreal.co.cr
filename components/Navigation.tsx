@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ContentLink } from "../lib/content";
 
 interface Props {
@@ -29,7 +30,12 @@ function Navigation({ currentSlug, links, children }: Props) {
         <section className="navigation">
             <div className="face">
                 <h1>Andr&eacute;s Villarreal</h1>
-                <img src="./img/face.jpg" className="face" alt="face" />
+                <Image
+                    width={640}
+                    height={640}
+                    src="/img/face.jpg"
+                    className="face"
+                    alt="face" />
             </div>
 
             <ul className="nav-links">
