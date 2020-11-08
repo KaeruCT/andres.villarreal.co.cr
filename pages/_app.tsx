@@ -11,8 +11,8 @@ const LOCALES = [
 
 // TODO: move this to _content, should not be in code
 const DESC = {
-    "en": "Andrés Villarreal, Software Engineer",
-    "es": "Andrés Villarreal, Ingeniero de Software",
+    "en": "Software Engineer, passionate about the web, frontend technologies, and the open source ecosystem.",
+    "es": "Ingeniero de Software, interesado en la web, las tecnologías frontend, y el ecosistema open source.",
 };
 
 function App({ Component, pageProps }: AppProps) {
