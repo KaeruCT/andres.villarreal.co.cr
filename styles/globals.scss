@@ -62,11 +62,11 @@ h2 {
     color: $black;
     font-size: 1.5em;
 }
-h4 {
+h3 {
     border-bottom: $greyBright 2px solid;
     font-size: 1.1em;
 }
-h5 {
+h4 {
     color: $greyDark;
     font-size: 0.9em;
 }
@@ -306,6 +306,11 @@ section {
     .mobile-only {
         display: block;
     }
+    section h2 {
+        // hide title since it reflects the selected menu option
+        // and it's right above the content on this screen size
+        display: none;
+    }
     .navigation {
         position: static;
         width: 100%;
@@ -375,10 +380,6 @@ section {
     }
     .thumbnail img {
         height: auto;
-    }
-    
-    section h2 {
-        display: none;
     }
 }
 
