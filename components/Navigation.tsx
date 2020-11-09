@@ -33,6 +33,8 @@ function Navigation({ currentSlug, links, children }: Props) {
                 <Image
                     width={640}
                     height={640}
+                    priority
+                    sizes="(max-width: 1040px) 250px, (max-width: 680px) 250px, (max-width: 400px) 400px, 140px"
                     src="/img/face.jpg"
                     className="face"
                     alt="face" />
