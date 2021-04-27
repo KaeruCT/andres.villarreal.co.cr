@@ -5,8 +5,6 @@ module.exports = {
     defaultLocale: "en",
   },
   async rewrites() {
-    return {
-      beforeFiles: [{ source: "/", destination: "/cv" }],
-    };
+    return [{ source: "/", destination: "/cv" }];
   },
 };
