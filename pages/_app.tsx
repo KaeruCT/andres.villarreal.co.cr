@@ -64,7 +64,7 @@ function App({ Component, pageProps }: AppProps) {
                             &copy; andres.villarreal.co.cr {new Date().getFullYear()}
                         </p>
                         <ul className="footer-links">
-                            <li><a href="http://twitter.com/KaeruCT" rel="me">Twitter</a></li>
+                            <li><a href="https://twitter.com/KaeruCT" rel="me">Twitter</a></li>
                             <li><a href="https://soundcloud.com/try_andy/tracks" rel="me">SoundCloud</a></li>
                             <li><a href="https://tryandy.bandcamp.com/" rel="me">Bandcamp</a></li>
                         </ul>
