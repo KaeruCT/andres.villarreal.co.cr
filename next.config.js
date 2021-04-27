@@ -5,6 +5,9 @@ module.exports = {
     defaultLocale: "en",
   },
   async rewrites() {
-    return [{ source: "", destination: "/cv" }];
+    return [
+      { source: "/", destination: "/cv", locale: false },
+      { source: "/es", destination: "/es/cv", locale: false },
+    ];
   },
 };
