@@ -7,6 +7,7 @@ module.exports = {
   async rewrites() {
     return [
       { source: "/", destination: "/en/cv", locale: false },
+      { source: "/en", destination: "/en/cv", locale: false },
       { source: "/es", destination: "/es/cv", locale: false },
     ];
   },
