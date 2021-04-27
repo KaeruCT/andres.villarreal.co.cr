@@ -40,6 +40,7 @@ function App({ Component, pageProps }: AppProps) {
                 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
                 <link rel="manifest" href="site.webmanifest" />
+                <link rel="me" href="https://github.com/KaeruCT" />
             </Head>
             <div id="page-container">
                 {router.query.slug && (
@@ -63,9 +64,9 @@ function App({ Component, pageProps }: AppProps) {
                             &copy; andres.villarreal.co.cr {new Date().getFullYear()}
                         </p>
                         <ul className="footer-links">
-                            <li><a href="http://twitter.com/KaeruCT">Twitter</a></li>
-                            <li><a href="https://soundcloud.com/try_andy/tracks">SoundCloud</a></li>
-                            <li><a href="https://tryandy.bandcamp.com/">Bandcamp</a></li>
+                            <li><a href="http://twitter.com/KaeruCT" rel="me">Twitter</a></li>
+                            <li><a href="https://soundcloud.com/try_andy/tracks" rel="me">SoundCloud</a></li>
+                            <li><a href="https://tryandy.bandcamp.com/" rel="me">Bandcamp</a></li>
                         </ul>
                     </div>
                 </div>
