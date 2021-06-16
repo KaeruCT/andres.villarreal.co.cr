@@ -166,7 +166,7 @@ footer {
 }
 
 .face {
-    img {
+    &>div {
         margin: .5em 0;
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
         transition: transform .5s ease;
@@ -327,7 +327,7 @@ section {
             width: 100%;
         }
         
-        .face {
+        .face>div {
             margin: 0 auto;
             margin-bottom: 1em !important;
             max-width: 250px;
