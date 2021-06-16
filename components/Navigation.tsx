@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ContentLink } from "../lib/content";
+import face from "../public/img/face.jpg";
 
 interface Props {
     links: ContentLink[];
@@ -35,7 +36,8 @@ function Navigation({ currentSlug, links, children }: Props) {
                     height={640}
                     priority
                     sizes="(max-width: 1040px) 250px, (max-width: 680px) 250px, (max-width: 400px) 400px, 140px"
-                    src="/img/face.jpg"
+                    src={face}
+                    placeholder="blur"
                     className="face"
                     alt="face" />
             </div>
