@@ -17,12 +17,12 @@ function Navigation({ currentSlug, links, children }: Props) {
             setMobile(this.matches);
         }
         const media = window.matchMedia && window.matchMedia("all and (max-width: 680px)");
-        if (media) {
+        if (media && media.addEventListener) {
             media.addEventListener("change", listener);
             setMobile(media.matches);
         }
         return () => {
-            if (media) {
+            if (media && media.removeEventListener) {
                 media.removeEventListener("change", listener);
             }
         }
