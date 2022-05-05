@@ -166,7 +166,7 @@ footer {
 }
 
 .face {
-    &>div {
+    &>span {
         margin: .5em 0;
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
         transition: transform .5s ease;
@@ -408,7 +408,12 @@ section {
             max-width: unset;
         }
     }
-    
+    footer {
+        font-size: .7em;
+    }
+    .footer-links {
+        margin-top: 20px;
+    }
 }
 
 svg {
