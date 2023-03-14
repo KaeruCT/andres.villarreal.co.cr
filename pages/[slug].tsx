@@ -1,5 +1,6 @@
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import React, { Fragment } from "react";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { DEFAULT_CONTENT, getContentLinks, getContentPagesByLocale } from "../lib/content";
@@ -11,7 +12,7 @@ function ContentPage({ page, info, links }: ContentPageProps): JSX.Element {
     const infoContent = (
         <Fragment>
             <h1>{info.title}</h1>
-            <ReactMarkdown source={info.content} allowDangerousHtml />
+            <ReactMarkdown children={info.content} rehypePlugins={[rehypeRaw]} />
         </Fragment>
     );
     return (
@@ -30,7 +31,7 @@ function ContentPage({ page, info, links }: ContentPageProps): JSX.Element {
 
             <section className={`featured-content ${page.slug}`}>
                 <h2>{page.title}</h2>
-                <ReactMarkdown source={page.content} allowDangerousHtml />
+                <ReactMarkdown children={page.content} rehypePlugins={[rehypeRaw]} />
             </section>
         </Fragment>
     );
