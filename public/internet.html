@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>to the internet</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html,
+      body {
+        overflow: hidden;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      h1 {
+        font-size: 2em;
+        text-align: center;
+      }
+      h1 span {
+        padding: 10px 20px;
+        color: #fff;
+        display: inline-block;
+        margin: 0 10px;
+        text-shadow: 3px 3px 0px #000;
+      }
+      h1 span:nth-child(1) {
+        background: #c0c;
+        transform: rotate(-14deg);
+      }
+      h1 span:nth-child(2) {
+        background: #bb0;
+        transform: rotate(14deg);
+      }
+      h1 span:nth-child(3) {
+        background: #0bb;
+        transform: rotate(-7deg);
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="700" height="700"><defs><filter id="a" width="140%" height="140%" x="-20%" y="-20%" color-interpolation-filters="linearRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse"><feTurbulence width="100%" height="100%" x="0%" y="0%" baseFrequency=".092" numOctaves="4" result="turbulence" seed="15" stitchTiles="stitch" type="fractalNoise"/><feSpecularLighting width="100%" height="100%" x="0%" y="0%" in="turbulence" lighting-color="%23fff" result="specularLighting" specularConstant=".8" specularExponent="20" surfaceScale="36"><feDistantLight azimuth="3" elevation="111"/></feSpecularLighting></filter></defs><path fill="%23000000ff" d="M0 0h700v700H0z"/><path fill="%23fff" d="M0 0h700v700H0z" filter="url(%23a)"/></svg>');
+      }
+      p {
+        padding: 20px 10px;
+        text-align: center;
+        position: relative;
+        min-width: 120px;
+      }
+      .bg {
+        position: absolute;
+        width: 100vw;
+        height: 120vh;
+        mix-blend-mode: lighten;
+        border-radius: 15%;
+        min-width: 420px;
+        max-width: 800px;
+      }
+      .bg:nth-child(1) {
+        background: #0ff;
+        transform: rotate3d(1, 3, 5, 560deg) scale(0.8);
+        opacity: 0.6;
+      }
+      .bg:nth-child(2) {
+        background: #f0f;
+        transform: rotate3d(1, 3, 5, 520deg) scale(0.8);
+        opacity: 0.6;
+      }
+      .bg:nth-child(3) {
+        background: #ff0;
+        transform: rotate3d(1, 3, 5, 540deg) scale(0.8);
+        opacity: 0.6;
+      }
+      i {
+        font-style: normal;
+        background: #fff;
+        display: inline-block;
+        padding: 0 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+      <div class="bg"></div>
+      <div class="bg"></div>
+      <div class="bg"></div>
+    <main>
+      <div>
+        <h1>
+          <span>to</span>
+          <span>the</span>
+          <span>internet</span>
+        </h1>
+        <p>
+          i want you to be a place where<br /><i>people</i> are excellent to
+          each other<br />and can freely <i>share</i> ideas
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
