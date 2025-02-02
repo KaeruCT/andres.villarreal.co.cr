@@ -1,8 +1,6 @@
 import { join } from "path";
 import { readFileSync, readdirSync } from "fs";
 
-export const DEFAULT_CONTENT = "info";
-
 export interface ContentPage {
     order: number;
     slug: string;
@@ -44,17 +42,18 @@ export function getContentPagesByLocale(): Record<string, ContentPages> {
 
             const index = fileContents.indexOf("\n");
             const [title, content] = [fileContents.slice(0, index), fileContents.slice(index + 1)];
-            const [order, slug] = name.split(".");
+            const [orderStr, slug] = name.split(".");
+            const order = Number(orderStr);
 
             result[directory.name][slug] = {
-                order: parseInt(order),
+                order,
                 slug,
                 title,
                 content,
             };
         });
     });
-    
+
     cachedResult = result;
     return result;
 }
@@ -63,13 +62,15 @@ export function getContentLinks(locale: string): ContentLink[] {
     const pages = getContentPagesByLocale()[locale];
     return Object
         .keys(pages)
-        .filter((slug) => slug !== DEFAULT_CONTENT)
+        .filter((slug) => pages[slug].order !== 0)
         .sort((a, b) => pages[a].order - pages[b].order)
         .map((slug) => {
-            const page = pages[slug];
-            return {
-                slug: slug,
-                title: page.title
-            };
+            const { title } = pages[slug];
+            return { slug, title };
         });
+}
+
+export function getDescription(locale: string): string {
+    const pages = getContentPagesByLocale()[locale];
+    return pages["description"].title;
 }
