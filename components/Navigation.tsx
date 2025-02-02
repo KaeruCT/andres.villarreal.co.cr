@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ContentLink } from "../lib/content";
@@ -7,7 +7,7 @@ import face from "../public/img/face.jpg";
 interface Props {
     links: ContentLink[];
     currentSlug: string;
-    children: JSX.Element;
+    children: React.JSX.Element;
 }
 
 function Navigation({ currentSlug, links, children }: Props) {
@@ -30,11 +30,12 @@ function Navigation({ currentSlug, links, children }: Props) {
     return (
         <section className="navigation">
             <div className="face">
-                <h1>Andr&eacute;s Villarreal</h1>
+                <h1>Andrés Villarreal</h1>
                 <Image
                     width={640}
                     height={640}
                     priority
+                    style={{ height: "100%" }}
                     sizes="(max-width: 1040px) 250px, (max-width: 680px) 250px, (max-width: 400px) 400px, 140px"
                     src={face}
                     placeholder="blur"
@@ -45,10 +46,8 @@ function Navigation({ currentSlug, links, children }: Props) {
             <ul className="nav-links">
                 {links.map((link) => (
                     <li key={link.slug}>
-                        <Link href={`/${link.slug}`} scroll={!mobile}>
-                            <a className={link.slug === currentSlug ? "current" : ""}>
-                                {link.title}
-                            </a>
+                        <Link href={`/${link.slug}`} scroll={!mobile} className={link.slug === currentSlug ? "current" : ""}>
+                            {link.title}
                         </Link>
                     </li>
                 ))}

@@ -165,16 +165,14 @@ footer {
     width: 140px;
 }
 
-.face {
-    &>span {
-        margin: .5em 0;
-        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
-        transition: transform .5s ease;
-        max-width: 100%;
-        border-radius: 5px;
-        &:hover {
-            transform: rotate(-5deg);
-        }
+.face img {
+    margin: .5em 0;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
+    transition: transform .5s ease;
+    max-width: 100%;
+    border-radius: 5px;
+    &:hover {
+        transform: rotate(-5deg);
     }
 }
 
@@ -327,7 +325,7 @@ section {
             width: 100%;
         }
         
-        .face>div {
+        .face img {
             margin: 0 auto;
             margin-bottom: 1em !important;
             max-width: 250px;
