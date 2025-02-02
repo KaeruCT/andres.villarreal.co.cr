@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import React, { Fragment } from "react";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { DEFAULT_CONTENT, getContentLinks, getContentPagesByLocale } from "../lib/content";
+import { getContentLinks, getContentPagesByLocale } from "../lib/content";
 import Navigation from "../components/Navigation";
 
 type ContentPageProps = InferGetStaticPropsType<typeof getStaticProps>;
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
     const pages = getContentPagesByLocale()[locale];
     const page = pages[slug];
-    const info = pages[DEFAULT_CONTENT];
+    const info = pages.info;
     const links = getContentLinks(locale);
 
     return { props: { page, info, links } };
