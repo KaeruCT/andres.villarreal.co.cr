@@ -8,7 +8,7 @@ import Navigation from "../components/Navigation";
 
 type ContentPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-function ContentPage({ page, info, links }: ContentPageProps): JSX.Element {
+function ContentPage({ page, info, links }: ContentPageProps): React.JSX.Element {
     const infoContent = (
         <Fragment>
             <h1>{info.title}</h1>
@@ -18,7 +18,7 @@ function ContentPage({ page, info, links }: ContentPageProps): JSX.Element {
     return (
         <Fragment>
             <Head>
-                <title>Andrés Villarreal | {page.title}</title>
+                <title>{`Andrés Villarreal | ${page.title}`}</title>
             </Head>
 
             <Navigation
