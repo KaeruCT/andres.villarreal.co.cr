@@ -13,19 +13,19 @@ const script = `
   })();`;
 
 class CustomDocument extends Document {
-    render() {
-        return (
-            <Html>
-                <Head />
-                <body>
-                    <Main />
-                    <NextScript />
-                    <script dangerouslySetInnerHTML={{ __html: script }} />
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+          <script dangerouslySetInnerHTML={{ __html: script }} />
 
-                </body>
-            </Html>
-        );
-    }
+        </body>
+      </Html>
+    );
+  }
 }
 
 export default CustomDocument;
