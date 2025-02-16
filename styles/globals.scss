@@ -1,8 +1,8 @@
 // Base color palette (SASS variables)
-$black: #222;
-$blackDark: #111;
-$greyDark: #444;
-$greyMiddle: #505050;
+$black: #1d1f22;
+$blackDark: #24272c;
+$greyDark: #3f4247;
+$greyMiddle: #4b4f57;
 $greyBright: #d0d0d0;
 $white: #fafafa;
 $whiteDark: #e5e5e5;
@@ -27,7 +27,7 @@ $neonGreenDark: #22c55e;  // Darker neon green for dark mode
 @media (prefers-color-scheme: dark) {
   :root {
   --bg-primary: #{$black};
-  --bg-secondary: #{$blackDark};
+  --bg-secondary: #{$greyDark};
   --text-primary: #{$white};
   --text-secondary: #{$greyBright};
   --border-color: #{$greyDark};
@@ -44,10 +44,11 @@ html, body {
   text-rendering: optimizeLegibility;
   padding: 0;
   margin: 0;
+  background: var(--bg-primary);
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   color: var(--text-primary);
   font-size: 18px;
 }
@@ -73,9 +74,9 @@ p {
   min-height: 100%;
   position: relative;
   z-index: 1;
-  background: var(--bg-primary);
   padding: 1em 0;
   box-shadow: var(--shadow-color) 0 0 32px;
+  background: var(--bg-primary);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -95,7 +96,7 @@ h3 {
   color: var(--text-primary);
   font-size: 1.1em;
 }
-h2, h3 {
+h2, h3, h4 {
   position: relative;
   
   padding-bottom: 0.5em;
@@ -124,41 +125,46 @@ h4 {
   min-height: 800px;
 }
 
-.projects, .skills, .clear {
-  clear: both;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  margin: 1em 0;
 }
-.thumbnail {
-  width: 50%;
-  float: left;
-  font-size: 1.2em;
-  text-align: center;
-  padding-bottom: 1em;
 
+.thumbnail {
+  background: var(--bg-secondary);
+  background-position: 1px 176px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(#000, 0.25);
+  
   img {
     max-width: 290px;
     max-height: 180px;
-    width: auto;
-    height: auto;
+    width: 100%;
+    object-fit: contain;
   }
 
-  span {
-    line-height: 2em;
+  div {
+    padding-top: 0.5em;
   }
 }
+
 a.thumbnail {
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(#000, 0.25);
+  }
+  
   &:hover, &:active {
-    border-bottom: 0 !important;
-    text-decoration: underline;
-  }
-  &:hover img {
-    transform: scale(1.1);
-    box-shadow: var(--shadow-color) 2px 2px 30px;
-  }
-}
-.thumbnail {
-  img {
-    transition: all 0.5s ease;
-    box-shadow: var(--shadow-color) 2px 2px 5px;
+    border: 2px solid var(--accent) !important;
   }
 }
 
@@ -190,29 +196,77 @@ a.thumbnail {
 }
 
 footer {
-  width: 100%;
-  position: absolute;
-  height: 100px;
-  overflow: hidden;
-  margin-top: -16px;
+  position: relative;
+  box-shadow: 0 -2px 10px var(--shadow-color);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/dots.png') fixed repeat-x;
+    background-position: 0 718px;
+    @media (prefers-color-scheme: light) {
+      filter: invert(1) brightness(1.5);
+    }
+  }
+
+  > div {
+    position: relative; // Keep content above the background
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 1em 2em;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    a {
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--accent);
+        border-bottom: none;
+      }
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+    }
+  }
 }
 
-.inner-footer {
-  position: fixed;
-  color: var(--text-secondary);
-  background: var(--bg-primary);
-  height: 100px;
-  width: 100%;
-  clear: both;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  margin: 0 auto;
-
-  div {
-    padding: .5em;
-    margin: 0 auto;
-    max-width: 600px;
+@media all and (max-width: 680px) {
+  footer {
+    > div {
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  .grid-container {
+    grid-template-columns: 1fr; // Switch to single column
   }
 }
 
@@ -271,38 +325,19 @@ a.current {
 }
 
 .footer-links {
-  float: right;
-
-  small {
-    font-size: .8em;
-  }
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-left: auto; // Push to right
 
   li {
-    float: left;
     font-size: .9em;
-    margin-left: 1em;
     line-height: 70px;
-  }
-
-  a:link, a:visited {
-    color: var(--text-secondary);
-  }
-
-  a:hover {
-    color: var(--bg-primary);
-    text-decoration: underline;
-    border-bottom: 0 !important;
-  }
-
-  a:active {
-    color: var(--bg-primary);
   }
 }
 footer {
   p {
     margin: 0;
-    line-height: 100px;
-    float: left;
   }
 }
 
@@ -321,30 +356,34 @@ section {
     clear: both;
   }
 
-  &.cv p {
+  ul {
+    margin-top: 0;
+  }
+
+  p {
     margin-top: 0;
     text-align: justify;
   }
 }
 
 .personal-info {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.5em;
+  margin-bottom: 1em;
+  
   dt {
     color: var(--text-secondary);
     font-weight: bold;
-    width: 30%;
-    float: left;
-    clear: left;
   }
 
   dd {
     margin: 0;
-    padding: 0;
-    padding-left: 1em;
   }
 
-  margin-bottom: 1em;
-
-  .meta { display: none; }
+  .meta { 
+    display: none; 
+  }
 }
 
 .desktop-only {
@@ -409,7 +448,6 @@ section {
   }
 }
 
-
 @media all and (max-width: 680px) {
   body {
     font-size: 16px;
@@ -436,11 +474,20 @@ section {
   #content {
     padding: 0 20px;
   }
-  .thumbnail {
-    width: 100%;
+  .grid-container {
+    grid-template-columns: 1fr; // Switch to single column
   }
   .thumbnail img {
     height: auto;
+  }
+  .personal-info {
+    grid-template-columns: 1fr;
+    gap: 0.25em;
+    
+    dt {
+      color: var(--text-secondary);
+      margin-top: 0.5em;
+    }
   }
 }
 
