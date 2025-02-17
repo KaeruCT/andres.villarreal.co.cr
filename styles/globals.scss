@@ -67,8 +67,12 @@ p {
     &:first-child {
       margin-left: 0;
     }
+    @media (prefers-color-scheme: light) {
+      filter: brightness(0.9);
+    }
   }
 }
+
 #page-container {
   width: 100%;
   min-height: 100%;
@@ -76,7 +80,7 @@ p {
   z-index: 1;
   padding: 1em 0;
   box-shadow: var(--shadow-color) 0 0 32px;
-  background: var(--bg-primary);
+  background: var(--bg-primary) url('/dots-corner.png') top right fixed repeat-y;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,6 +102,7 @@ h3 {
 }
 h2, h3, h4 {
   position: relative;
+  width: fit-content;
   
   padding-bottom: 0.5em;
   
@@ -206,11 +211,10 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/dots.png') fixed repeat-x;
-    background-position: 0 718px;
-    @media (prefers-color-scheme: light) {
-      filter: invert(1) brightness(1.5);
-    }
+    background: url('/dots-corner.png') no-repeat fixed;
+    background-color: var(--shadow-color);
+    background-position-x: right;
+    background-position-y: 42px;
   }
 
   > div {
@@ -272,7 +276,6 @@ footer {
 
 .navigation {
   position: fixed;
-  background: var(--bg-primary);
   left: 0;
   top: 0;
   padding: 40px;
