@@ -260,20 +260,6 @@ footer {
   }
 }
 
-@media all and (max-width: 680px) {
-  footer {
-    > div {
-      flex-direction: column;
-      gap: 1em;
-      align-items: center;
-      text-align: center;
-    }
-  }
-  .grid-container {
-    grid-template-columns: 1fr; // Switch to single column
-  }
-}
-
 .navigation {
   position: fixed;
   left: 0;
@@ -425,15 +411,14 @@ section {
     .face img {
       margin: 0 auto;
       margin-bottom: 1em !important;
-      max-width: 250px;
+      max-width: 275px;
       order: 0;
     }
     
     .info {
-      width: 50%;
+      flex: 1;
       font-size: .9em;
       border-left: 0;
-      margin: 0;
       order: 1;
     }
 
@@ -459,19 +444,30 @@ section {
     padding: .5em 1em;
   }
   .navigation {
-    .face {
-      height: unset;
-    }
     .info {
       margin: 0 auto;
       left: 0;
-      padding-left: 0;
       &::before {
         display: none;
       }
     }
     .nav-links li a {
       font-size: .9em;
+    }
+  }
+  .face {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1em;
+    h1 {
+      flex: 1;
+      word-wrap: break-word;
+      width: 150px;
+      line-height: 1.2em;
+    }
+    img {
+      height: 64px !important;
+      width: 64px !important;
     }
   }
   #content {
@@ -483,22 +479,24 @@ section {
   .thumbnail img {
     height: auto;
   }
-  .personal-info {
-    grid-template-columns: 1fr;
-    gap: 0.25em;
-    
-    dt {
-      color: var(--text-secondary);
-      margin-top: 0.5em;
+  footer {
+    > div {
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+      text-align: center;
     }
+  }
+  .grid-container {
+    grid-template-columns: 1fr; // Switch to single column
   }
 }
 
-@media all and (max-width: 570px) {
-  .navigation {
-    .info {
-      width: 100%;
-    }
+@media all and (max-width: 560px) {
+  .info {
+    flex: 1 auto !important;
+    width: 100%;
+    padding-left: 0;
   }
 }
 
@@ -507,14 +505,13 @@ section {
     .nav-links {
       justify-content: space-between;
     }
-    .info {
-      width: 100%;
-      padding: 0;
-    }
-    .face {
-      width: 100%;
-      height: unset;
-      max-width: unset;
+  }
+  .personal-info {
+    grid-template-columns: 1fr;
+    gap: 0.25em;
+    
+    dt {
+      margin-top: 0.5em;
     }
   }
   footer {
