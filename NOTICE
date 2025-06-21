@@ -1,0 +1,22 @@
+LICENSING NOTICE
+
+This repository contains two types of assets with different licenses:
+
+CODE LICENSE (MIT):
+
+All source code files including JavaScript, TypeScript, HTML, CSS, configuration files,  and build tooling are licensed under the MIT License. See LICENSE file.
+
+CONTENT LICENSE (CC BY 4.0):
+
+All non-code assets including:
+- Content in `/_content/` directory (markdown files, copy, blog posts)
+- Images and illustrations in `/public/` directory
+- Site content, documentation, and media files
+
+are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+See LICENSE-content file.
+
+Copyright (c) 2025 Andrés Villarreal
+
+For attribution requirements under CC BY 4.0, please provide appropriate credit  when reusing any content from this repository.
